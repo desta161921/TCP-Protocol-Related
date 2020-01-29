@@ -76,7 +76,7 @@ print()
 
 #Fit models with some grid search CV=5 (not to low), use the best model
 
-parameters = {'n_estimators': [100,300], 'max_features':["sqrt"], 'max_depth':[10], 'oob_score': [True]}
+parameters = {'n_estimators': [10,30,100,500,1000], 'max_features':["sqrt"], 'max_depth':[10], 'oob_score': [True]}
 clf_rf = RandomForestRegressor(random_state=1)
 clf = GridSearchCV(clf_rf, parameters, cv=5, scoring='neg_mean_squared_error', n_jobs=-1)
 model = clf.fit(X_train, y_train)
