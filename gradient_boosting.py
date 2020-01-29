@@ -70,7 +70,7 @@ print()
 clf_xgb = GradientBoostingRegressor()
 params = {'n_estimators': [10,100,300, 500], 'max_depth': [1,2,3,5],'learning_rate': [0.1, 0.5]}
 clf = GridSearchCV(estimator=clf_xgb, param_grid=params, 
-                          cv=3,
+                          cv=5,
                            scoring='neg_mean_squared_error')
 model = clf.fit(X_train, y_train)
 math.sqrt(model.best_score_*-1)
