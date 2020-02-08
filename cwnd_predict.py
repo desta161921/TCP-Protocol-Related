@@ -147,7 +147,7 @@ for layer in model.layers:
     print (h)
     print("Length of the Weights:"+str(len(h)))
 
-# More about the weights: https://stackoverflow.com/questions/42861460/how-to-interpret-weights-in-a-lstm-layer-in-keras
+
 for e in zip(model.layers[0].trainable_weights, model.layers[0].get_weights()):
     print('Param %s:\n%s' % (e[0],e[1]))
 
